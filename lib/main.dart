@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:pmu4_p1/screens/home_screen.dart'; // Prilagodi putanju prema svom projektu
 
 void main() {
-  runApp(const MainApp());
+  runApp(const PostsApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class PostsApp extends StatelessWidget {
+  const PostsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'Posts App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue), // Promijenjena boja u plavu (prikladnije za objave nego narančasta za potrese)
       ),
+      home: const HomeScreen(),
     );
   }
 }
