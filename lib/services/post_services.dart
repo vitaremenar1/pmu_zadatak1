@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/post.dart'; // Prilagodi putanju do svog Post modela
+import '../models/posts.dart'; // Prilagodi putanju do svog Post modela
 
 class PostService {
   const PostService();

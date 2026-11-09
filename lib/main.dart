@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pmu4_p1/screens/home_screen.dart'; // Prilagodi putanju prema svom projektu
+import 'screens/home_screen.dart'; // Prilagodi putanju prema svom projektu
 
 void main() {
   runApp(const PostsApp());

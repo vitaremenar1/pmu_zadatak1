@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'list_screen.dart';   // Ekran s popisom postova
-import 'table_screen.dart';  // Ekran s tablicom postova
-import 'profile_screen.dart'; // Zamijenjeno s MapScreen (npr. korisnici ili detalji)
+import 'popis_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,10 +11,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _index = 0;
 
+  // Lista ekrana (mora imati minimalno 2 ekrana da odgovara broju destinacija)
   static const _screens = <Widget>[
-    ListScreen(), 
-    TableScreen(), 
-    ProfileScreen(), // Prilagodi naziv ekrana prema potrebi
+    PopisEkran(),
+    Center(child: Text('Korisnici')), // Možeš zamijeniti svojim ekranom
   ];
 
   @override
@@ -31,16 +28,12 @@ class _HomeScreenState extends State<HomeScreen> {
         }),
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.list), 
-            label: 'Popis',
+            icon: Icon(Icons.article),
+            label: 'Objave',
           ),
           NavigationDestination(
-            icon: Icon(Icons.table_chart), 
-            label: 'Tablica',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person), 
-            label: 'Korisnici', // Primjer umjesto karte
+            icon: Icon(Icons.person),
+            label: 'Korisnici',
           ),
         ],
       ),
