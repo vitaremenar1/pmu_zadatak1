@@ -31,17 +31,18 @@ class _PopisEkranState extends State<PopisEkran> {
   }
 
   void _openDetail(Post post) {
-    Navigator.push(
-      context,
-      PageRouteBuilder(
-        transitionDuration: const Duration(milliseconds: 300),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-            FadeTransition(opacity: animation, child: child),
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            DetaljiEkran(post: post),
-      ),
-    );
-  }
+  Navigator.push(
+    context,
+    PageRouteBuilder(
+      transitionDuration: const Duration(milliseconds: 300),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          FadeTransition(opacity: animation, child: child),
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          DetailsScreen(post: post), // Prosljeđivanje odabrane objave
+    ),
+  );
+}
+
 
   void _togglePin(Post post) {
     setState(() {

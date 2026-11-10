@@ -33,29 +33,23 @@ class PostKartica extends StatelessWidget {
         leading: Hero(
           tag: 'post-${post.id}',
           child: CircleAvatar(
-            backgroundColor: Colors.blue.shade100,
+            backgroundColor: Colors.pink.shade100,
             child: Text(
               '${post.id}',
-              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.pink),
             ),
           ),
         ),
         title: Text(
           post.title,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        subtitle: Text(
-          post.body,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-        ),
+        subtitle: Text(post.body),
         trailing: AnimatedScale(
           scale: pinned ? 1 : 0,
           duration: const Duration(milliseconds: 250),
           curve: Curves.easeOutBack,
-          child: const Icon(Icons.push_pin, color: Colors.amber),
+          child: const Icon(Icons.push_pin, color: Colors.green),
         ),
         onTap: onTap,
         onLongPress: onLongPress,

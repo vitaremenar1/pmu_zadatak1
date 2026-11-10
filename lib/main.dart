@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart'; // Prilagodi putanju prema svom projektu
+import 'package:pmu_zadatak1/screens/popis_screen.dart';
 
 void main() {
   runApp(const PostsApp());
@@ -14,9 +14,9 @@ class PostsApp extends StatelessWidget {
       title: 'Posts App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue), // Promijenjena boja u plavu (prikladnije za objave nego narančasta za potrese)
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
       ),
-      home: const HomeScreen(),
+      home: const PopisEkran(),
     );
   }
 }

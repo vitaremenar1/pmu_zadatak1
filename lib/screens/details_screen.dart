@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import '../models/posts.dart';
 
-class DetaljiEkran extends StatefulWidget {
+class DetailsScreen extends StatefulWidget {
   final Post post;
-  const DetaljiEkran({super.key, required this.post});
+  const DetailsScreen({super.key, required this.post});
 
   @override
-  State<DetaljiEkran> createState() => _DetaljiEkranState();
+  State<DetailsScreen> createState() => _DetailsScreenState();
 }
 
-class _DetaljiEkranState extends State<DetaljiEkran>
+class _DetailsScreenState extends State<DetailsScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _pulse;
   late final Animation<double> _scale;
@@ -52,6 +52,8 @@ class _DetaljiEkranState extends State<DetaljiEkran>
     return Scaffold(
       appBar: AppBar(
         title: Text('Objava #${post.id}'),
+
+        //
         actions: [
           IconButton(
             icon: ScaleTransition(
@@ -64,6 +66,8 @@ class _DetaljiEkranState extends State<DetaljiEkran>
             onPressed: _toggleLike,
           ),
         ],
+
+
       ),
       body: ListView(
         padding: const EdgeInsets.all(24),
@@ -75,9 +79,9 @@ class _DetaljiEkranState extends State<DetaljiEkran>
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.blue.shade50,
+                  color: Colors.pink.shade50,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.blue.shade200),
+                  border: Border.all(color: Colors.pink.shade200),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,7 +90,7 @@ class _DetaljiEkranState extends State<DetaljiEkran>
                       'Korisnik ID: ${post.userId}',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue.shade800,
+                        color: Colors.pink.shade800,
                       ),
                     ),
                     const SizedBox(height: 12),
